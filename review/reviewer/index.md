@@ -5,7 +5,7 @@
 
 -   [코드 리뷰 표준](standard.md)
 -   [코드 리뷰의 목적](looking-for.md)
--   [CL을 추적, 조사 가이드](navigate.md)
+-   [CL 추적, 조사 가이드](navigate.md)
 -   [효율적인 코드 리뷰](speed.md)
 -   [코드 리뷰 코멘트 작성하는 방법](comments.md)
 -   [요청 사항 반영(Pushback)을 다루는 방법](pushback.md)
