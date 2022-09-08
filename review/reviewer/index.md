@@ -1,17 +1,13 @@
-# How to do a code review
+# 어떻게 코드 리뷰를 하는가
 
-The pages in this section contain recommendations on the best way to do code
-reviews, based on long experience. All together they represent one complete
-document, broken up into many separate sections. You don't have to read them
-all, but many people have found it very helpful to themselves and their team to
-read the entire set.
+본 문서에는 오랜 기간 축정된 경험을 통해, 코드 리뷰를 하는 최선의 방법에 대한 조언들이 쓰여져있다.
+개별적인 문서들로 구분되어 있고, 모두다 읽을 필요는 없지만, 많은 사람들은 결국, 작성된 모든 내용들을 그들에게 도움이 되어 읽게 된다.
 
--   [The Standard of Code Review](standard.md)
--   [What to Look For In a Code Review](looking-for.md)
--   [Navigating a CL in Review](navigate.md)
--   [Speed of Code Reviews](speed.md)
--   [How to Write Code Review Comments](comments.md)
--   [Handling Pushback in Code Reviews](pushback.md)
+-   [코드 리뷰 표준](standard.md)
+-   [코드 리뷰의 목적](looking-for.md)
+-   [코드리뷰에서 CL을 추적, 조사 가이드](navigate.md)
+-   [효율적인 코드 리뷰](speed.md)
+-   [코드 리뷰 코멘트 작성하는 방법](comments.md)
+-   [코드리뷰에서 요청 사항 반영(Pushback)을 다루는 방법](pushback.md)
 
-See also the [CL Author's Guide](../developer/index.md), which gives detailed
-guidance to developers whose CLs are undergoing review.
+또한 리뷰 하고자 하는 CL을 작성하는 개발자를 위한 가이드는 [코드 작성자 가이드](../developer/index.md)를 참조
