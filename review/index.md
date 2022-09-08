@@ -1,70 +1,53 @@
-# Code Review Developer Guide
+# 개발자 코드리뷰 가이드
 
-## Introduction {#intro}
+## 개요 {#intro}
 
-A code review is a process where someone other than the author(s) of a piece of
-code examines that code.
+코드리뷰란 코드를 작성하지 않는 누군가가, 해당 코드에 대해서 검토(examine) 하는 것을 의미한다. 
 
-At Google, we use code review to maintain the quality of our code and products.
+구글에서는 코드 리뷰를 통해서 우리 제품과 코드의 품질을 유지한다,
 
-This documentation is the canonical description of Google's code review
-processes and policies.
+이 문서는 구글 코드 리뷰의 과정(process)와 정책(policy)의 표준에 관한 것이다.
 
 
 
-This page is an overview of our code review process. There are two other large
-documents that are a part of this guide:
+아래에는 코드 리뷰 과정의 개요가 있고, 코드 리뷰에 대해서, 보다 세부적인 내용은 아래 두개의 문서에 있다.:
 
--   **[How To Do A Code Review](reviewer/index.md)**: A detailed guide for code
-    reviewers.
--   **[The CL Author's Guide](developer/index.md)**: A detailed guide for
-    developers whose CLs are going through review.
+-   **[어떻게 코드 리뷰를 해 주는가](reviewer/index.md)**: 코드 리뷰어를 위한 상세한 가이드
+-   **[코드 작성자 가이드](developer/index.md)**: 리뷰를 진행하게 될, CLs을 작성 한 개발자를 위한 상세한 가이드
 
-## What Do Code Reviewers Look For? {#look_for}
+## 코드 리뷰를 통해서 얻고자 하는 것 What Do Code Reviewers Look For? {#look_for}
 
-Code reviews should look at:
+코드 리뷰를 통해서 확인하고자 하는 것:
 
--   **Design**: Is the code well-designed and appropriate for your system?
--   **Functionality**: Does the code behave as the author likely intended? Is
-    the way the code behaves good for its users?
--   **Complexity**: Could the code be made simpler? Would another developer be
-    able to easily understand and use this code when they come across it in the
-    future?
--   **Tests**: Does the code have correct and well-designed automated tests?
--   **Naming**: Did the developer choose clear names for variables, classes,
-    methods, etc.?
--   **Comments**: Are the comments clear and useful?
--   **Style**: Does the code follow our
+-   **Design**: 이 코드가 디자인이 잘 되었고, 시스템에 적합한 가?
+-   **Functionality**: 작성자가 의도한대로 코드가 동작하는가? 사용자에게 좋은 방식으로 동작하는가?
+-   **Complexity**: 코드가 가능한 간단하게 작성 되었는가? 다른 개발자가 이 코드를 우연히 찾았을 때, 코드를 쉽게 이해하고, 사용할 수 있는가?
+-   **Tests**: 작성된 코드를 위한, 적절하고, 잘 계획된 자동화 테스트 코드가 존재하는가?
+-   **Naming**: 변수, 클래스, 메서드와 같은 것들의 이름이 명확한가?
+-   **Comments**: 작성된 주석들은 명확하고 도움이 되는가?
+-   **Style**: 아래의 코딩 스타일을 따르고 있는가?
     [style guides](http://google.github.io/styleguide/)?
--   **Documentation**: Did the developer also update relevant documentation?
+-   **Documentation**: 해당 코드와 관련된 문서들이 업데이트 되었는가?
 
-See **[How To Do A Code Review](reviewer/index.md)** for more information.
+보다 상세한 내용은, **[어떻게 코드 리뷰를 하는가](reviewer/index.md)** 문서를 통해서 확인할 수 있습니다.
 
-### Picking the Best Reviewers {#best_reviewers}
+### 최고의 리뷰어를 선발해라 {#best_reviewers}
 
-In general, you want to find the *best* reviewers you can who are capable of
-responding to your review within a reasonable period of time.
+일반적으로, 코드리뷰 기간 동안, 당신에게 반영할 수 있는 리뷰를 해준 "최고" 리뷰어를 찾을 것이다.
 
-The best reviewer is the person who will be able to give you the most thorough
-and correct review for the piece of code you are writing. This usually means the
-owner(s) of the code, who may or may not be the people in the OWNERS file.
-Sometimes this means asking different people to review different parts of the
-CL.
+최고의 리뷰어는 가능한 코드를 작성한 사람에게 작성한 코드의 명확한 부분 대해서 적절하고, 올바른 리뷰를 제공한다. 
+가끔, CL이 아닌 다른 부분의 변경을 요청하는 사람도 있기 때문에, 이 리뷰어는 OWNERS file에 포함되어 있을 수도 있고, 아닐 수도 있다. 
 
-If you find an ideal reviewer but they are not available, you should at least CC
-them on your change.
+만약 이상적인 리뷰어가 리뷰어중에 포함되어 있지 않거나 사정이 있다면, 적어도 변경 내역에 관해서 CC를 통해 그 사람에게 알려라
 
 ### In-Person Reviews (and Pair Programming) {#in_person}
 
-If you pair-programmed a piece of code with somebody who was qualified to do a
-good code review on it, then that code is considered reviewed.
+만약 당신이 코드 리뷰를 잘 진행하는 사람과 짝 코딩(pair programming)을 통해서 코드를 작성하고 있다면, 작성된 코드는 리뷰가 진행 되었다고 여긴다.
 
-You can also do in-person code reviews where the reviewer asks questions and the
-developer of the change speaks only when spoken to.
+또한 짝 코딩을 진행하는 과정에서 직접적으로 질문하고, 답변을 함으로써 코드 리뷰를 진행해도 된다.
 
 ## See Also {#seealso}
 
--   [How To Do A Code Review](reviewer/index.md): A detailed guide for code
-    reviewers.
--   [The CL Author's Guide](developer/index.md): A detailed guide for developers
-    whose CLs are going through review.
+-   [어떻게 코드 리뷰를 하는가](reviewer/index.md): 코드 리뷰어를 위한 상세한 가이드
+    
+-   [코드 작성자 가이드](developer/index.md): 리뷰를 진행하게 될, CLs을 작성 한 개발자를 위한 상세한 가이드
