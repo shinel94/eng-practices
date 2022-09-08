@@ -15,7 +15,7 @@
 -   **[어떻게 코드 리뷰를 해 주는가](reviewer/index.md)**: 코드 리뷰어를 위한 상세한 가이드
 -   **[코드 작성자 가이드](developer/index.md)**: 리뷰를 진행하게 될, CLs을 작성 한 개발자를 위한 상세한 가이드
 
-## 코드 리뷰를 통해서 얻고자 하는 것 What Do Code Reviewers Look For? {#look_for}
+## 코드 리뷰를 통해서 얻고자 하는 것 {#look_for}
 
 코드 리뷰를 통해서 확인하고자 하는 것:
 
