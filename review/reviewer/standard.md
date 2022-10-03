@@ -1,44 +1,27 @@
-# The Standard of Code Review
+# 코드 리뷰 표준
 
 
+코드 리뷰는 시간이 지남에 따라서 구글에서 작성된 코드 베이스의 상태를 우수한 상태로 유지하고 관리하는 것이 가장 주된 목적이다.
+코드 리뷰의 모든 도구와 절차들은 이를 이루기 위해서 설계되었다.
 
-The primary purpose of code review is to make sure that the overall
-code health of Google's code
-base is improving over time. All of the tools and processes of code review are
-designed to this end.
+이를 완수하기 위해서, 많은 곳에서 적절한 균형을 맞추어야 한다.
 
-In order to accomplish this, a series of trade-offs have to be balanced.
+우선, 개발자는 본인 작업에 대해서 _make progress_ 가 가능해야 한다. (진전이 있음을 보여야 한다는 의미로 추측됨) 만약 코드 베이스에 어떤 개선 사항도 제출하지 못한다면, 코드 베이스는 절대로 개선될 수 없다. 또한 만약 리뷰어가 _any_ change (어떤 변화) 가 추가되게 어렵게 한다면, 개발자는 개선하는 작업에 대해서 동기부여가 안될 것이다.
 
-First, developers must be able to _make progress_ on their tasks. If you never
-submit an improvement to the codebase, then the codebase never improves. Also,
-if a reviewer makes it very difficult for _any_ change to go in, then developers
-are disincentivized to make improvements in the future.
+이와 반대로, 리뷰어는 각각 CL(변화 목록)에 대해서 퀄리티를 검증할 책임이 있고, 이를 통해서, 시간이 흘러가도 코드 베이스의 전반적인 상태가 안좋게 변하는 것을 막아야 한다.
+이것은 매우 어려울 수 있다. 왜냐하면, 코드베이스의 상태가 안좋게 되는 것은 시간이 지남에 따라 아주 조금씩 조금씩 안좋게 되는 것의 축적의 산물이기 때문이다. 특히 개발 팀이 시간에 심각하게 쫓기고 있고, 또 그들이 그 문제를 해결하기 위해서, (코드 품질을 저하시킴에도) 보다 편리한 지름길을 통해서 해결하고 할 수 있기 때문이다.
 
-On the other hand, it is the duty of the reviewer to make sure that each CL is
-of such a quality that the overall code health of their codebase is not
-decreasing as time goes on. This can be tricky, because often, codebases degrade
-through small decreases in code health over time, especially when a team is
-under significant time constraints and they feel that they have to take
-shortcuts in order to accomplish their goals.
+또한, 리뷰어들은 그들이 리뷰하는 코드에 대해서 주인의식과 책임감을 가져야 한다. 그들은 코드 베이스가 한결같고, 유지가능한 상태로 유지하는 것뿐 아니라 ["코드 리뷰의 목적은 무엇인가"](looking-for.md) 에서 언급한 모든 것에 대해 확실하게 책임을 져야 한다.
 
-Also, a reviewer has ownership and responsibility over the code they are
-reviewing. They want to ensure that the codebase stays consistent, maintainable,
-and all of the other things mentioned in
-["What to look for in a code review."](looking-for.md)
+따라서, 우리는, 코드 리뷰에서 우리가 예상하는 표준 적인 룰을 아래와 같이 정했다.
 
-Thus, we get the following rule as the standard we expect in code reviews:
+**일반적으로, 리뷰어들은 CL이 반영된 상태에서 코드 베이스의 전체적인 상태가 개선되고, 모든 기능이 정상적으로 동작할 때만, 승인을 해여야 한다. 그것이 아니라면 CL은 불완전한 상태이기 때문에 리뷰어는 승인을 하면 안된다.
 
-**In general, reviewers should favor approving a CL once it is in a state where
-it definitely improves the overall
-code health of the system
-being worked on, even if the CL isn't perfect.**
+이것은 모든 코드 리뷰 가이드 라인의 _가장_ 중요하고 우선적인 전제이고 규칙이다. 
 
-That is _the_ senior principle among all of the code review guidelines.
+물론 이것에도 한계는 있다. 예를 들어, 만약 리뷰어가 그들의 시스템에 추가되기를 원하지 않는 기능이 CL로 추가되었을 때, CL이 잘 디자인 되어있더라도, 리뷰어가 이것을 코드베이스에 반영하는 것을 막을 수 있는 점이다.
 
-There are limitations to this, of course. For example, if a CL adds a feature
-that the reviewer doesn't want in their system, then the reviewer can certainly
-deny approval even if the code is well-designed.
-
+여기서 중요한 점은, "완벽한" 코드가 아닌,
 A key point here is that there is no such thing as "perfect" code&mdash;there is
 only _better_ code. Reviewers should not require the author to polish every tiny
 piece of a CL before granting approval. Rather, the reviewer should balance out
